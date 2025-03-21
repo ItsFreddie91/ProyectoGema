@@ -1,0 +1,33 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Proyecto.Models.Ingreso;
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Registro de Ingresos</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-controller="Home" asp-action="Add_Ingresos" method="post">
+                        <div class="mb-3">
+                            <label for="descripcion" class="form-label">Descripción</label>
+                            <input type="text" class="form-control" id="descripcion" asp-for="Descripcion" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="monto" class="form-label">Monto</label>
+                            <input type="number" class="form-control" id="monto" asp-for="Monto" step="0.01" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fecha" class="form-label">Fecha</label>
+                            <input type="date" class="form-control" id="fecha" asp-for="Fecha" required>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Registrar Ingreso</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
